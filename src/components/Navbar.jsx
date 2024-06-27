@@ -10,6 +10,7 @@ import {
   styled,
   Toolbar,
   Typography,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -19,10 +20,11 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
+  backgroundColor: theme.palette.background.paper,
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
   width: "40%",
+  color: theme.palette.text.primary,
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -45,6 +47,8 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
+
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -53,7 +57,10 @@ const Navbar = () => {
         </Typography>
         <Spa sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
-          <InputBase placeholder="Search..." />
+          <InputBase
+            placeholder="Search..."
+            sx={{ color: theme.palette.text.primary }}
+          />
         </Search>
         <Icons>
           <Badge badgeContent={12} color="error">
