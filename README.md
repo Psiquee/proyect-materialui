@@ -1,5 +1,5 @@
 # Utilizacion de Material UI
-Aplicacion de red social, creada con MUI.
+Aplicacion de red social, creada con MUI. Funcion de interfaz en Modo Oscuro con boton para agregar publicacion a traves de caja adaptable.
 
 ## Clone
 
